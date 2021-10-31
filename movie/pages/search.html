@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <base id="route" href="/movie/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <title>搜索结果</title>
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/search.css" />
+    <link rel="stylesheet" href="font/iconfont.css" />
+  </head>
+
+  <body>
+    <div id="wrap">
+      <!-- 头部 -->
+      <div id="header">
+        <div id="banner">
+          <a href="pages/home.html">
+            <img src="images/logo.png" alt="懂你电影" />
+            <h1>懂你电影</h1>
+          </a>
+        </div>
+        <div id="nav">
+          <ul>
+            <li>
+              <a href="pages/userlogin.html" target="_blank">登录/注册</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 主体 -->
+      <div id="main">
+        <div id="tool">
+          <span><span class="iconfont">&#xe609;</span>返回首页</span>
+          <div id="result">
+            <h1></h1>
+            <h2></h2>
+          </div>
+        </div>
+        <div id="films"></div>
+        <a id="gotop" onclick="javascript:document.getElementsByTagName('BODY')[0].scrollTop=0;">
+          <span class="iconfont">&#xe610;</span>
+        </a>
+      </div>
+
+      <!-- 尾部 -->
+      <div id="footer">
+        <p>© 2021 林喜彬 李锦照 梁德胜 陆宇航 黄亮智</p>
+      </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/search.js"></script>
+  </body>
+</html>

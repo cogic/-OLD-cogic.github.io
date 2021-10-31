@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <base id="route" href="/movie/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <title>用户注册</title>
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- 头部 -->
+      <div id="header">
+        <div id="banner">
+          <a href="pages/home.html">
+            <img src="images/logo.png" alt="懂你电影" />
+            <h1>懂你电影</h1>
+          </a>
+        </div>
+      </div>
+
+      <div id="login-box">
+        <h1>注册</h1>
+        <!-- Login的大标题 -->
+
+        <div class="form">
+          <div class="item">
+            <!-- username部分 -->
+            <i></i>
+            <!-- 将来用来绘制username前面的图标 -->
+            <input id="uname" type="text" placeholder="用户名" name="username" />
+            <!-- 用文本框实现的username的输入 -->
+          </div>
+
+          <div class="item">
+            <!-- password部分 -->
+            <i></i>
+            <!-- 将来用来绘制password前面的图标 -->
+            <input id="passwd" type="password" placeholder="密码" name="password" />
+            <!-- 用password文本框实现的密码输入 -->
+          </div>
+
+          <div class="item">
+            <!-- password部分 -->
+            <i></i>
+            <!-- 将来用来绘制password前面的图标 -->
+            <input id="repasswd" type="password" placeholder="确认密码" name="qrpassword" />
+            <!-- 用password文本框实现的密码输入 -->
+          </div>
+        </div>
+
+        <div id="checktip">&nbsp;</div>
+        <button id="loginbt" type="submit">注册</button>
+        <!-- 用button实现的Login登陆按钮 -->
+        <div id="logintip"><a href="pages/userlogin.html">已有账号？点此登录</a></div>
+      </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/database.js"></script>
+
+    <script>
+      $(function () {
+        $("input").on("input propertychange", function () {
+          $(this).val($(this).val().replace(" ", ""));
+          $("#checktip").html("&nbsp;");
+        });
+        $("#loginbt").on("click", function () {
+          // alert("该功能尚未实现");
+          var uname = $("#uname").val();
+          var passwd = $("#passwd").val();
+          var repasswd = $("#repasswd").val();
+          if(uname == ""){
+            $("#checktip").html("请输入用户名！");
+          } else if(passwd == ""){
+            $("#checktip").html("请输入密码！");
+          } else if(repasswd == ""){
+            $("#checktip").html("请输入确认密码！");
+          } else{
+            if(passwd != repasswd) {
+              $("#checktip").html("两次密码输入不一致！");
+            } else{
+              checkRegist(uname, passwd, function (result) {
+                if (result == "true") {
+                  $("#checktip").html("注册成功，请点击下方链接登录！");
+                } else if (result == "false") {
+                  $("#checktip").html("用户名已经存在！");
+                } else {
+                  $("#checktip").html(result);
+                }
+              });
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

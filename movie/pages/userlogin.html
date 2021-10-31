@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <base id="route" href="/movie/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <title>用户登录</title>
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <!-- 头部 -->
+      <div id="header">
+        <div id="banner">
+          <a href="pages/home.html">
+            <img src="images/logo.png" alt="懂你电影" />
+            <h1>懂你电影</h1>
+          </a>
+        </div>
+      </div>
+
+      <div id="login-box">
+        <h1>登录</h1>
+
+        <div class="form">
+          <div class="item">
+            <i></i>
+            <input id="uname" type="text" placeholder="用户名" name="username" />
+          </div>
+
+          <div class="item">
+            <i></i>
+            <input id="passwd" type="password" placeholder="密码" name="password" />
+          </div>
+        </div>
+
+        <div id="checktip">&nbsp;</div>
+        <button id="loginbt" type="submit">登录</button>
+        <div id="logintip"><a href="pages/regist.html">没有账号？点此注册</a></div>
+      </div>
+    </div>
+    <script src="js/jquery.js"></script>
+    <script src="js/database.js"></script>
+    <script>
+      $(function () {
+        $("input").on("input propertychange", function () {
+          $(this).val($(this).val().replace(" ", ""));
+          $("#checktip").html("&nbsp;");
+        });
+        $("#loginbt").on("click", function () {
+          // alert("该功能尚未实现");
+          var uname = $("#uname").val();
+          var passwd = $("#passwd").val();
+          if (uname == "") {
+            $("#checktip").html("请输入用户名！");
+          } else if (passwd == "") {
+            $("#checktip").html("请输入密码！");
+          } else {
+            checkLogin(uname, passwd, function (result) {
+              if (result == "true") {
+                $("#checktip").html("登录成功，即将关闭页面！");
+                var preurl = getUrlParam("preurl");
+                top.location = preurl.replace("/movie/","");
+              } else if (result == "false") {
+                $("#checktip").html("登录失败，请检查用户名和密码！");
+              } else {
+                $("#checktip").html(result);
+              }
+            });
+          }
+        });
+
+        function getUrlParam(keyName) {
+          var reg = new RegExp("(^|&)" + keyName + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+          var r = window.location.search.substr(1).match(reg); //匹配目标参数
+          if (r != null) return decodeURI(r[2]);
+          return null; //返回参数值
+        }
+      });
+    </script>
+  </body>
+</html>

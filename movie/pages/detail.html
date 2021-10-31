@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <base id="route" href="/movie/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <title>电影详情</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/master.css" />
+    <link rel="stylesheet" href="css/detail.css" />
+    <link rel="stylesheet" href="font/iconfont.css" />
+  </head>
+  <body>
+    <div id="wrap">
+      <div id="header">
+        <div id="banner">
+          <a href="pages/home.html">
+            <img src="images/logo.png" alt="懂你电影" />
+            <h1>懂你电影</h1>
+          </a>
+        </div>
+        <div id="nav">
+          <ul>
+            <li>
+              <a href="pages/userlogin.html" target="_blank">登录/注册</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="main">
+        <div id="plate">
+          <h1 id="title"></h1>
+          <div id="left">
+            <div id="img-box">
+              <div id="mark">
+                <span class="mark-lable">评价：</span>
+                <span class="iconfont" data="1" tip="很差">&#xe60e;</span>
+                <span class="iconfont" data="2" tip="较差">&#xe60e;</span>
+                <span class="iconfont" data="3" tip="还行">&#xe60e;</span>
+                <span class="iconfont" data="4" tip="推荐">&#xe60e;</span>
+                <span class="iconfont" data="5" tip="力荐">&#xe60e;</span>
+                <span class="mark-tip"></span>
+              </div>
+            </div>
+            <div id="info">
+              <span>导演：</span>
+              <span id="director"></span>
+              <br />
+              <span>编剧：</span>
+              <span id="screenwriter"></span>
+              <br />
+              <span>主演：</span>
+              <span id="actor"></span>
+              <br />
+              <span>类型：</span>
+              <span id="type"></span>
+              <br />
+              <span>制片国家/地区：</span>
+              <span id="area"></span>
+              <br />
+              <span>语言：</span>
+              <span id="language"></span>
+              <br />
+              <span>片长：</span>
+              <span id="length"></span>
+            </div>
+          </div>
+          <div id="right">
+            <h1>电影评分</h1>
+            <div id="rate-tip">
+              <span class="score"></span>
+              <div class="star">
+                <div class="back"></div>
+                <div class="pre-top"></div>
+                <div class="pre-bottom"></div>
+                <span class="iconfont">&#xe620;</span>
+                <span class="iconfont">&#xe620;</span>
+                <span class="iconfont">&#xe620;</span>
+                <span class="iconfont">&#xe620;</span>
+                <span class="iconfont">&#xe620;</span>
+              </div>
+            </div>
+            <div id="rate-chart"></div>
+          </div>
+        </div>
+        <div id="like">
+          <div id="films">
+            <h1>喜欢这部电影的人也喜欢</h1>
+            <!-- Swiper -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper"></div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+              <!-- Add Arrows -->
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+        </div>
+      </div>
+      <div id="footer">
+        <p>© 2021 林喜彬 李锦照 梁德胜 陆宇航 黄亮智</p>
+      </div>
+    </div>
+  </body>
+
+  <script src="js/jquery.js"></script>
+  <script src="js/database.js"></script>
+  <script src="js/echarts.min.js"></script>
+  <script src="js/detail.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
+</html>

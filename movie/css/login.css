@@ -1,0 +1,112 @@
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("../images/movie.jpg");
+  /* background-size: 100% auto; */
+
+}
+
+/* 头部 */
+#header {
+  position: relative;
+  height: 80px;
+  background-color: #2a2a2a;
+}
+
+#banner {
+  position: relative;
+  top: 20px;
+  left: 0px;
+  width: 800px;
+  height: 40px;
+  margin: auto;
+  /* background-color: darkcyan; */
+}
+
+#banner img {
+  position: absolute;
+  display: inline;
+  height: 100%;
+  /* background-color: darkgray; */
+}
+
+#banner h1 {
+  position: absolute;
+  left: 50px;
+  padding: 0 10px;
+  color: #dfdfdf;
+  font-size: 20px;
+  line-height: 40px;
+  /* background-color: darkgoldenrod; */
+}
+
+#login-box {
+  width: 400px;
+  height: 350px;
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 40px 50px 0 50px;
+  text-align: center;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background: #ffffffe1;
+}
+
+#login-box:hover{
+  background: #ffffff;
+}
+
+#login-box h1 {
+  color: rgb(80, 80, 80);
+  font-size: 30px;
+  line-height: 50px;
+}
+
+#login-box .form .item input {
+  width: 250px; /* 设置合适的宽度 */
+  height: 40px;
+  border: 0; /* 首先将边界取消，方便下面修改下部边界宽度 */
+  border-bottom: 5px solid rgb(0, 0, 0); /* 将下边界进行修改，显示出横线效果 */
+  font-size: 18px; /* 将字体适当的变大加粗 */
+  background: #d4d4d400; /* 将输入框设置为透明*/
+  color: rgb(19, 19, 19); /* 上面的文本颜色设置为白色，但是placeholder的颜色要单独设置 */
+  padding: 5px 10px; /* 为了placeholder的内容不是顶格显示，增加内部边界 */
+  outline-style: none;
+}
+
+#login-box button {
+  border: 0; /* 取消按钮的边界 */
+  width: 150px; /* 设置合适的按钮的长和宽 */
+  height: 40px;
+  /* margin-top: 30px; 设置合适的上部外框的宽度，增加与上面的password框的距离 */
+  font-size: 18px; /* 修改按钮文字的大小 */
+  color: rgb(63, 63, 63); /* 修改按钮上文字的颜色 */
+  border-radius: 25px; /* 将按钮的左右边框设置为圆弧 */
+  background-color:  #c1d2e0;
+  cursor: pointer;
+}
+
+#login-box button:hover {
+  background-color:  #89a7c0;
+}
+
+#checktip{
+  margin-top: 10px;
+  color: #a10d0d;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+#logintip a{
+  color: #af7676;
+  font-size: 14px;
+  line-height: 30px;
+  text-decoration-line:underline;
+  cursor: pointer;
+}
+
+#logintip a:hover{
+  color: #c03a3a;
+}
